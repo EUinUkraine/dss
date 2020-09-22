@@ -69,7 +69,7 @@ public enum DigestAlgorithm implements OidAndUriBasedEnum {
 
 	WHIRLPOOL("WHIRLPOOL", "WHIRLPOOL", "1.0.10118.3.0.55", "http://www.w3.org/2007/05/xmldsig-more#whirlpool"),
 
-	GOST34311("GOST34311", "GOST34311", "1.2.643.2.2.9", "http://www.w3.org/2001/04/xmldsig-more#gost34311");
+	GOST34311("GOST34311", "GOST34311", "1.2.804.2.1.1.1.1.2.1", "http://www.czo.gov.ua/GOST34311");
 
 	/**
 	 * RFC 2313

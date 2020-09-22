@@ -3,8 +3,8 @@ module jpms_dss_spi {
 	requires jpms_dss_utils;
 
 	requires org.slf4j;
-	requires org.bouncycastle.provider;
-	requires org.bouncycastle.pkix;
+	//requires org.bouncycastle.provider;
+	//requires org.bouncycastle.pkix;
 	
 	exports eu.europa.esig.dss.spi;
 	exports eu.europa.esig.dss.spi.client.http;

@@ -25,6 +25,8 @@ import eu.europa.esig.dss.asic.cades.signature.ASiCWithCAdESService;
 import eu.europa.esig.dss.asic.xades.ASiCWithXAdESSignatureParameters;
 import eu.europa.esig.dss.asic.xades.signature.ASiCWithXAdESService;
 import eu.europa.esig.dss.cookbook.example.CookbookTools;
+import eu.europa.esig.dss.detailedreport.DetailedReport;
+import eu.europa.esig.dss.diagnostic.DiagnosticData;
 import eu.europa.esig.dss.enumerations.ASiCContainerType;
 import eu.europa.esig.dss.enumerations.DigestAlgorithm;
 import eu.europa.esig.dss.enumerations.EncryptionAlgorithm;
@@ -33,10 +35,13 @@ import eu.europa.esig.dss.model.DSSDocument;
 import eu.europa.esig.dss.model.SignatureValue;
 import eu.europa.esig.dss.model.ToBeSigned;
 import eu.europa.esig.dss.model.x509.CertificateToken;
+import eu.europa.esig.dss.simplereport.SimpleReport;
 import eu.europa.esig.dss.token.DSSPrivateKeyEntry;
 import eu.europa.esig.dss.token.Pkcs12SignatureToken;
 import eu.europa.esig.dss.token.SignatureTokenConnection;
 import eu.europa.esig.dss.validation.CommonCertificateVerifier;
+import eu.europa.esig.dss.validation.SignedDocumentValidator;
+import eu.europa.esig.dss.validation.reports.Reports;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.ua.DSTU4145NamedCurves;
 import org.bouncycastle.asn1.ua.UAObjectIdentifiers;
@@ -120,9 +125,30 @@ public class SignOneFileWithASiCSBDSTU4145Test extends CookbookTools {
 			// the previous step.
 			DSSDocument signedDocument = service.signDocument(toSignDocument, parameters, signatureValue);
 
-			// end::demo[]
+		SignedDocumentValidator documentValidator = SignedDocumentValidator.fromDocument(signedDocument);
 
-			signedDocument.save("~/tmp/cades.zip");
+		// We add the certificate verifier (which allows to verify and trust certificates)
+		documentValidator.setCertificateVerifier(commonCertificateVerifier);
+
+		// Here, everything is ready. We can execute the validation (for the example, we use the default and embedded
+		// validation policy)
+		Reports reports = documentValidator.validateDocument();
+
+		// We have 3 reports
+		// The diagnostic data which contains all used and static data
+		DiagnosticData diagnosticData = reports.getDiagnosticData();
+
+		// The detailed report which is the result of the process of the diagnostic data and the validation policy
+		DetailedReport detailedReport = reports.getDetailedReport();
+
+		// The simple report is a summary of the detailed report (more user-friendly)
+		SimpleReport simpleReport = reports.getSimpleReport();
+
+
+		// end::demo[]
+
+			signedDocument.save("cades-e.zip");
+
 
 			//testFinalDocument(signedDocument);
 
