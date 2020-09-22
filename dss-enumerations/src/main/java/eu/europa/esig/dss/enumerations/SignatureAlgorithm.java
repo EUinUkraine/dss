@@ -36,6 +36,10 @@ import java.util.Objects;
  */
 public enum SignatureAlgorithm implements OidAndUriBasedEnum {
 
+	// DSTU
+
+	DSTU4145_GOST34311(EncryptionAlgorithm.DSTU4145, DigestAlgorithm.GOST34311),
+
 	RSA_RAW(EncryptionAlgorithm.RSA, null),
 	
 	RSA_SHA1(EncryptionAlgorithm.RSA, DigestAlgorithm.SHA1),
@@ -243,6 +247,9 @@ public enum SignatureAlgorithm implements OidAndUriBasedEnum {
 
 		Map<String, SignatureAlgorithm> oidAlgorithms = new HashMap<>();
 
+		// DSTU
+		oidAlgorithms.put("1.2.804.2.1.1.1.1.3.1.1", DSTU4145_GOST34311);
+
 		oidAlgorithms.put("1.2.840.113549.1.1.5", RSA_SHA1);
 		oidAlgorithms.put("1.3.14.3.2.29", RSA_SHA1);
 		oidAlgorithms.put("1.2.840.113549.1.1.14", RSA_SHA224);
@@ -294,6 +301,8 @@ public enum SignatureAlgorithm implements OidAndUriBasedEnum {
 		oidAlgorithms.put("0.4.0.127.0.7.1.1.4.1.5", PLAIN_ECDSA_SHA512);
 		oidAlgorithms.put("0.4.0.127.0.7.1.1.4.1.6", PLAIN_ECDSA_RIPEMD160);
 
+
+
 		oidAlgorithms.put("1.3.101.112", ED25519);
 		oidAlgorithms.put("1.3.101.113", ED448);
 
@@ -341,6 +350,10 @@ public enum SignatureAlgorithm implements OidAndUriBasedEnum {
 	private static Map<String, SignatureAlgorithm> registerJavaAlgorithms() {
 
 		Map<String, SignatureAlgorithm> javaAlgorithms = new HashMap<>();
+
+		//DSTU
+
+		javaAlgorithms.put("GOST34311withDSTU4145", DSTU4145_GOST34311);
 
 		javaAlgorithms.put("NONEwithRSA", RSA_RAW);
 		

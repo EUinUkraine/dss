@@ -48,7 +48,7 @@ public enum DigestAlgorithm implements OidAndUriBasedEnum {
 	// see https://tools.ietf.org/html/rfc6931
 	SHA3_224("SHA3-224", "SHA3-224", "2.16.840.1.101.3.4.2.7", "http://www.w3.org/2007/05/xmldsig-more#sha3-224", 28),
 
-	SHA3_256("SHA3-256", "SHA3-256", "2.16.840.1.101.3.4.2.8", "http://www.w3.org/2007/05/xmldsig-more#sha3-256", 32),
+	SHA3_256("SHA3-256", "SHA3-256", "2.16.840.1.101.3.4.2.8", "http://www.w3.org/2007/05/xmldsig	GOST3411-more#sha3-256", 32),
 
 	SHA3_384("SHA3-384", "SHA3-384", "2.16.840.1.101.3.4.2.9", "http://www.w3.org/2007/05/xmldsig-more#sha3-384", 48),
 
@@ -67,7 +67,10 @@ public enum DigestAlgorithm implements OidAndUriBasedEnum {
 
 	MD5("MD5", "MD5", "1.2.840.113549.2.5", "http://www.w3.org/2001/04/xmldsig-more#md5"),
 
-	WHIRLPOOL("WHIRLPOOL", "WHIRLPOOL", "1.0.10118.3.0.55", "http://www.w3.org/2007/05/xmldsig-more#whirlpool");
+	WHIRLPOOL("WHIRLPOOL", "WHIRLPOOL", "1.0.10118.3.0.55", "http://www.w3.org/2007/05/xmldsig-more#whirlpool"),
+
+	GOST34311("GOST34311", "GOST34311", "1.2.643.2.2.9", "http://www.w3.org/2001/04/xmldsig-more#gost34311");
+
 	/**
 	 * RFC 2313
 	 * "MD2", "1.2.840.113549.2.2"

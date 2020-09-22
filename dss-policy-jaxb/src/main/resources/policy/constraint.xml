@@ -286,6 +286,7 @@
 			<Algo>SHA3-512</Algo>
 			<Algo>RIPEMD160</Algo>
 			<Algo>WHIRLPOOL</Algo>
+			<Algo>GOST34311</Algo>
 		</AcceptableDigestAlgo>
 		<AlgoExpirationDate Format="yyyy">
 			<!-- Digest algorithms -->

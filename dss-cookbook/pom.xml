@@ -71,6 +71,16 @@
 			<groupId>eu.europa.ec.joinup.sd-dss</groupId>
 			<artifactId>dss-server-signing-rest</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcpkix-jdk15on</artifactId>
+			<version>1.69</version>
+		</dependency>
+		<dependency>
+			<groupId>bc-java</groupId>
+			<artifactId>core</artifactId>
+			<version>1.69</version>
+		</dependency>
 	</dependencies>
 
 	<profiles>

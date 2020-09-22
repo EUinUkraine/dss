@@ -34,6 +34,8 @@ public enum EncryptionAlgorithm implements OidBasedEnum {
 	DSA("DSA", "1.2.840.10040.4.1", "DSA"),
 
 	ECDSA("ECDSA", "1.2.840.10045.2.1", "ECDSA"),
+
+	DSTU4145("DSTU4145", "1.2.804.2.1.1.1.1.3.1.1", "DSTU4145"),
 	
 	PLAIN_ECDSA("PLAIN-ECDSA", "0.4.0.127.0.7.1.1.4.1", "PLAIN-ECDSA"),
 	

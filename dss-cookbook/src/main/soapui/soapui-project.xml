@@ -1589,6 +1589,7 @@
           <xs:enumeration value="MD2"/>
           <xs:enumeration value="MD5"/>
           <xs:enumeration value="WHIRLPOOL"/>
+          <xs:enumeration value="GOST43411"/>
         </xs:restriction>
       </xs:simpleType>
       <xs:simpleType name="signatureForm">
