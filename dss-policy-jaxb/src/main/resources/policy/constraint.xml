@@ -262,6 +262,7 @@
 			<Algo>RSA</Algo>
 			<Algo>DSA</Algo>
 			<Algo>ECDSA</Algo>
+			<Algo>DSTU4145</Algo>
 			<Algo>PLAIN-ECDSA</Algo>
 <!-- 		<Algo>Ed25519</Algo> 				Not referenced in ETSI/SOGIS -->
 		</AcceptableEncryptionAlgo>
@@ -270,6 +271,8 @@
 			<Algo Size="1024">RSA</Algo>
 			<Algo Size="160">ECDSA</Algo>
 			<Algo Size="160">PLAIN-ECDSA</Algo>
+			<Algo Size="160">DSTU4145</Algo>
+			<Algo Size="160">1.2.804.2.1.1.1.1.3.1.1</Algo>
 <!-- 		<Algo Size="24">Ed25519</Algo> 		Not referenced in ETSI/SOGIS -->
 		</MiniPublicKeySize>
 		<AcceptableDigestAlgo>
@@ -287,9 +290,11 @@
 			<Algo>RIPEMD160</Algo>
 			<Algo>WHIRLPOOL</Algo>
 			<Algo>GOST34311</Algo>
+			<Algo>1.2.804.2.1.1.1.1.2.1</Algo>
 		</AcceptableDigestAlgo>
 		<AlgoExpirationDate Format="yyyy">
 			<!-- Digest algorithms -->
+			<Algo Date="2026">GOST34311</Algo> <!-- ETSI 119 312 V1.3.1 -->
 			<Algo Date="2005">MD2</Algo> <!-- The same as for MD5 -->
 			<Algo Date="2005">MD5</Algo> <!-- ETSI TS 102 176-1 (Historical) V2.1.1 -->
 			<Algo Date="2009">SHA1</Algo> <!-- ETSI TS 102 176-1 (Historical) V2.0.0 -->
@@ -325,6 +330,15 @@
 			<Algo Date="2026" Size="256">PLAIN-ECDSA</Algo> <!-- ETSI 119 312 V1.3.1 -->
 			<Algo Date="2026" Size="384">PLAIN-ECDSA</Algo> <!-- ETSI 119 312 V1.3.1 -->
 			<Algo Date="2026" Size="512">PLAIN-ECDSA</Algo> <!-- ETSI 119 312 V1.3.1 -->
+			<Algo Date="2026" Size="512">PLAIN-ECDSA</Algo> <!-- ETSI 119 312 V1.3.1 -->
+
+			<Algo Date="2023" Size="160">DSTU4145</Algo> <!-- ETSI TS 102 176-1 (Historical) V2.1.1 -->
+			<Algo Date="2023" Size="192">DSTU4145</Algo> <!-- ETSI TS 102 176-1 (Historical) V2.1.1 -->
+			<Algo Date="2026" Size="224">DSTU4145</Algo> <!-- ETSI 119 312 V1.1.1 -->
+			<Algo Date="2026" Size="256">DSTU4145</Algo> <!-- ETSI 119 312 V1.3.1 -->
+			<Algo Date="2026" Size="384">DSTU4145</Algo> <!-- ETSI 119 312 V1.3.1 -->
+			<Algo Date="2026" Size="512">DSTU4145</Algo> <!-- ETSI 119 312 V1.3.1 -->
+
 			
 <!-- 		<Algo Date="2026" Size="32">Ed25519</Algo> 		Not referenced in ETSI/SOGIS -->
 			<!-- end Encryption algorithms -->
