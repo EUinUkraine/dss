@@ -5,7 +5,7 @@
 
 	<groupId>eu.europa.ec.joinup.sd-dss</groupId>
 	<artifactId>sd-dss</artifactId>
-	<version>5.7</version>
+	<version>5.7.2</version>
 	<packaging>pom</packaging>
 	<name>Digital Signature Services</name>
 
@@ -47,7 +47,7 @@
 		<slf4j.version>1.7.30</slf4j.version>
 		<logback-classic.version>1.2.3</logback-classic.version>
 
-		<bouncycastle.version>1.69.4</bouncycastle.version>
+		<bouncycastle.version>1.69.5</bouncycastle.version>
 		<xmlsec.version>2.1.5</xmlsec.version>
 		<pdfbox.version>2.0.20</pdfbox.version>
 		<openpdf.version>1.3.20</openpdf.version>
